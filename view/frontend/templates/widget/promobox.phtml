@@ -1,0 +1,60 @@
+<?php
+$mode = 'grid';
+$uniqueId = $block->getUniqueId();
+if ($items = $block->getSlideCollection()): ?>
+    <div class="mp-product-slider-block block widget block-products-list <?php echo $mode; ?>">
+    </div>
+    <div class="block-content">
+        <div class="products-<?php echo $mode; ?> <?php echo $mode; ?>">
+            <ol class="product-items widget-viewed-grid">
+                <?php $iterator = 1; ?>
+                <div id="promobox-list-items-<?php echo $uniqueId;?>" class="owl-carousel owl-theme">
+                    <?php foreach ($items as $_item): ?>
+                        <?php echo ($iterator++ == 1) ? '<li class="product-item product-slider"">' : '</li><li class="product-item product-slider"">' ?>
+                        <div class="slider-product-item-info promo-container">
+                                <?php if ($_item['show_slide_text'] == 0) : ?>
+
+                                    <div class="slide-with-text">
+                                        <span class="product-image-container">
+                                            <span class="product-image-wrapper">
+                                                <img src="<?php echo $block->getMediaUrl() . $_item['background_image']; ?>" alt="" class="product-image-photo promo-photo">
+                                            </span>
+                                        </span>
+                                        <div class="slide_title">
+                                            <h2><?php echo $_item['slide_title'] ?></h2>
+                                        </div>
+                                    </div>
+
+                                <?php else : ?>
+
+                                    <div class="slide-with-text">
+                                        <span class="product-image-container">
+                                            <span class="product-image-wrapper">
+                                                <img src="<?php echo $block->getMediaUrl() . $_item['background_image']; ?>" alt="" class="product-image-photo promo-photo">
+                                            </span>
+                                        </span>
+                                        <div class="slide_title">
+                                            <h2><?php echo $_item['slide_title'] ?></h2>
+                                        </div>
+                                    </div>
+                                    <div class="slide_text">
+                                        <p><?php echo $block->getSlideText($_item['slide_text']); ?></p>
+                                        <a href="<?php echo $block->getArticleUrl($_item['slide_id']);?>">Read more</a>
+                                    </div>
+
+                                <?php endif; ?>
+                        </div>
+                        <?php echo ($iterator == count($items) + 1) ? '</li>' : '' ?>
+                    <?php endforeach ?>
+                </div>
+            </ol>
+        </div>
+    </div>
+    <script>
+        require(['jquery', 'Mageplaza_Productslider/js/owl.carousel.min'], function ($) {
+            $('#promobox-list-items-<?php echo $uniqueId;?>').owlCarousel(
+                <?php echo $block->getPromoboxSliderOptions();?>
+            );
+        });
+    </script>
+<?php endif; ?>

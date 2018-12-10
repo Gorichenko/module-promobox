@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="promobox_slider_listing_data_source" xsi:type="string">VOID\Promobox\Model\ResourceModel\PromoboxSlide\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="VOID\Promobox\Model\ResourceModel\PromoboxSlide\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">promobox_slides</argument>
+            <argument name="resourceModel" xsi:type="string">VOID\Promobox\Model\ResourceModel\PromoboxSlide</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="promobox_widget_listing_data_source" xsi:type="string">VOID\Promobox\Model\ResourceModel\PromoboxWidget\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="VOID\Promobox\Model\ResourceModel\PromoboxWidget\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">promobox_widgets</argument>
+            <argument name="resourceModel" xsi:type="string">VOID\Promobox\Model\ResourceModel\PromoboxWidget</argument>
+        </arguments>
+    </virtualType>
+</config>

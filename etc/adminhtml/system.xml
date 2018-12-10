@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="promobox" translate="label" sortOrder="1500">
+            <label>Promobox</label>
+        </tab>
+        <section id="promobox" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Promobox</label>
+            <tab>promobox</tab>
+            <resource>Mageplaza_Productslider::configuration</resource>
+            <group id="product_slider" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Slider</label>
+                <field id="items" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Slides count</label>
+                    <source_model>VOID_Promobox\Model\Config\Source\SlideCount</source_model>
+                    <comment>Change slides count</comment>
+                </field>
+                <field id="loop" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loop Slider</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>Select Yes to re-display the slider after it shows the last item</comment>
+                </field>
+                <field id="margin" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Margin Between Items</label>
+                    <validate>validate-digits</validate>
+                    <comment>pixel. This is the distance between two items in the slider</comment>
+                </field>
+                <field id="lazyLoad" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Lazy load images</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>Select Yes to lazy load images</comment>
+                </field>
+                <field id="autoplay" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Autoplay</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>Select Yes to allow auto-displaying the next products</comment>
+                </field>
+                <field id="autoplayTimeout" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Autoplay TimeOut</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>ms. This is the time which an item is auto-moved to the left</comment>
+                    <depends>
+                        <field id="autoplay">1</field>
+                    </depends>
+                </field>
+                <field id="autoplayHoverPause" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Autoplay HoverPause</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>Select Yes to stop the slider when hovering the mouse over the slider area</comment>
+                    <depends>
+                        <field id="autoplay">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="promobox_slider" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Promobox Slider</label>
+                <field id="items" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Slides count</label>
+                    <source_model>VOID_Promobox\Model\Config\Source\SlideCount</source_model>
+                    <comment>Change slides count</comment>
+                </field>
+                <field id="loop" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loop Slider</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>Select Yes to re-display the slider after it shows the last item</comment>
+                </field>
+                <field id="margin" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Margin Between Items</label>
+                    <validate>validate-digits</validate>
+                    <comment>pixel. This is the distance between two items in the slider</comment>
+                </field>
+                <field id="lazyLoad" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Lazy load images</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>Select Yes to lazy load images</comment>
+                </field>
+                <field id="autoplay" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Autoplay</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>Select Yes to allow auto-displaying the next products</comment>
+                </field>
+                <field id="autoplayTimeout" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Autoplay TimeOut</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>ms. This is the time which an item is auto-moved to the left</comment>
+                    <depends>
+                        <field id="autoplay">1</field>
+                    </depends>
+                </field>
+                <field id="autoplayHoverPause" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Autoplay HoverPause</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>validate-digits</validate>
+                    <comment>Select Yes to stop the slider when hovering the mouse over the slider area</comment>
+                    <depends>
+                        <field id="autoplay">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

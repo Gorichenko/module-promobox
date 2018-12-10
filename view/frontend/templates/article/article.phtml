@@ -1,0 +1,14 @@
+<?php $article = $block->getArticle(); ?>
+
+<?php if (!empty($article)): ?>
+<div class="content">
+    <div class="article">
+        <div class="article_title">
+            <h2><?php echo $article['article_title']; ?></h2>
+        </div>
+        <div class="article_text">
+            <p><?php echo $article['article_text']; ?></p>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

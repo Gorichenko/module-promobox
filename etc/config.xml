@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <promobox>
+            <product_slider>
+                <items>3</items>
+                <responsive>1</responsive>
+                <loop>1</loop>
+                <margin>10</margin>
+                <nav>0</nav>
+                <dots>0</dots>
+                <lazyLoad>1</lazyLoad>
+                <autoplay>0</autoplay>
+                <autoplayTimeout>5000</autoplayTimeout>
+                <autoplayHoverPause>0</autoplayHoverPause>
+            </product_slider>
+            <promobox_slider>
+                <items>3</items>
+                <responsive>1</responsive>
+                <loop>1</loop>
+                <margin>10</margin>
+                <nav>0</nav>
+                <dots>0</dots>
+                <lazyLoad>1</lazyLoad>
+                <autoplay>0</autoplay>
+                <autoplayTimeout>5000</autoplayTimeout>
+                <autoplayHoverPause>0</autoplayHoverPause>
+            </promobox_slider>
+        </promobox>
+    </default>
+</config>

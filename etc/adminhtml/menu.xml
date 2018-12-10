@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="VOID_Promobox::productslider" title="Promobox Slider" module="VOID_Promobox" sortOrder="100" resource="VOID_Promobox::productslider" parent="Magento_Backend::content"/>
+        <add id="VOID_Promobox::slider" title="Manage Promobox Slides" module="VOID_Promobox" sortOrder="20" parent="VOID_Promobox::productslider" action="promobox/slider/index" resource="VOID_Promobox::slider"/>
+        <add id="VOID_Promobox::widget" title="Manage Pormobox Widgets" module="VOID_Promobox" sortOrder="30" parent="VOID_Promobox::productslider" action="promobox/widget/index" resource="VOID_Promobox::widget"/>
+    </menu>
+</config>
