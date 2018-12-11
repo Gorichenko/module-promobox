@@ -1,4 +1,5 @@
 <?php
+
 $mode = 'grid';
 $uniqueId = $block->getUniqueId();
 if ($items = $block->getSlideCollection()): ?>
@@ -14,6 +15,7 @@ if ($items = $block->getSlideCollection()): ?>
                         <div class="slider-product-item-info promo-container">
                                 <?php if ($_item['show_slide_text'] == 0) : ?>
 
+                                <a href="<?php echo $block->getArticleUrl($_item['slide_id']);?>">
                                     <div class="slide-with-text">
                                         <span class="product-image-container">
                                             <span class="product-image-wrapper">
@@ -24,9 +26,11 @@ if ($items = $block->getSlideCollection()): ?>
                                             <h2><?php echo $_item['slide_title'] ?></h2>
                                         </div>
                                     </div>
+                                </a>
 
                                 <?php else : ?>
 
+                                <a href="<?php echo $block->getArticleUrl($_item['slide_id']);?>">
                                     <div class="slide-with-text">
                                         <span class="product-image-container">
                                             <span class="product-image-wrapper">
@@ -37,6 +41,7 @@ if ($items = $block->getSlideCollection()): ?>
                                             <h2><?php echo $_item['slide_title'] ?></h2>
                                         </div>
                                     </div>
+                                </a>
                                     <div class="slide_text">
                                         <p><?php echo $block->getSlideText($_item['slide_text']); ?></p>
                                         <a href="<?php echo $block->getArticleUrl($_item['slide_id']);?>">Read more</a>
@@ -51,7 +56,7 @@ if ($items = $block->getSlideCollection()): ?>
         </div>
     </div>
     <script>
-        require(['jquery', 'Mageplaza_Productslider/js/owl.carousel.min'], function ($) {
+        require(['jquery', 'VOID_Promobox/js/owl.carousel.min'], function ($) {
             $('#promobox-list-items-<?php echo $uniqueId;?>').owlCarousel(
                 <?php echo $block->getPromoboxSliderOptions();?>
             );

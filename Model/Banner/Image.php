@@ -7,7 +7,6 @@ class Image
     const SUB_DIR = 'promobox/slides/image/';
 
     protected $urlBuilder;
-
     protected $fileSystem;
 
     public function __construct(

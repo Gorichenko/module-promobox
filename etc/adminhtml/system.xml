@@ -8,12 +8,12 @@
         <section id="promobox" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Promobox</label>
             <tab>promobox</tab>
-            <resource>Mageplaza_Productslider::configuration</resource>
+            <resource>VOID_Promobox::configuration</resource>
             <group id="product_slider" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Product Slider</label>
                 <field id="items" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Slides count</label>
-                    <source_model>VOID_Promobox\Model\Config\Source\SlideCount</source_model>
+                    <source_model>VOID\Promobox\Model\Config\Source\SlideCount</source_model>
                     <comment>Change slides count</comment>
                 </field>
                 <field id="loop" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -63,7 +63,7 @@
                 <label>Promobox Slider</label>
                 <field id="items" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Slides count</label>
-                    <source_model>VOID_Promobox\Model\Config\Source\SlideCount</source_model>
+                    <source_model>VOID\Promobox\Model\Config\Source\SlideCount</source_model>
                     <comment>Change slides count</comment>
                 </field>
                 <field id="loop" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">

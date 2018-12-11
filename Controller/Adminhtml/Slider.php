@@ -12,7 +12,6 @@ abstract class Slider extends Action
     const ADMIN_RESOURCE = 'VOID_Promobox::slider';
 
     protected $slideModel;
-
     protected $coreRegistry;
 
     public function __construct(

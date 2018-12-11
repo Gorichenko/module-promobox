@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-    <widget id="void_product_slider" class="VOID\Promobox\Block\Widget\Slider">
-        <label translate="true">Product Slider</label>
-        <description>Product Slider</description>
+    <widget id="void_productslider" class="VOID\Promobox\Block\Widget\Slider">
+        <label translate="true">VOID Product Slider</label>
+        <description>VOID Product Slider</description>
         <parameters>
             <parameter name="title" xsi:type="text" required="false" visible="true">
                 <label translate="true">Title</label>
@@ -17,15 +17,15 @@
             <parameter name="products_count" xsi:type="text" required="false" visible="true">
                 <label translate="true">Limit the number of products</label>
             </parameter>
-            <parameter name="product_type" xsi:type="select" required="true" visible="true" source_model="VOID\Promobox\Model\Config\Source\ProductTypeWidget">
+            <parameter name="product_type" xsi:type="select" required="true" visible="true" source_model="VOID\Promobox\Model\Config\Source\ProductType">
                 <label translate="true">Select Slider</label>
             </parameter>
         </parameters>
     </widget>
 
     <widget id="void_promobox" class="VOID\Promobox\Block\Widget\Promobox">
-        <label translate="true">Promobox</label>
-        <description>Promobox Slider</description>
+        <label translate="true">VOID Promobox</label>
+        <description>VOID Promobox Slider</description>
         <parameters>
             <parameter name="title" xsi:type="text" required="false" visible="true">
                 <label translate="true">Title</label>

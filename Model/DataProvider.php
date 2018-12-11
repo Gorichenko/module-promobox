@@ -1,7 +1,8 @@
 <?php
+
 namespace VOID\Promobox\Model;
 
-use Mageplaza\Productslider\Model\ResourceModel\PromoboxSlide\CollectionFactory;
+use VOID\Promobox\Model\ResourceModel\PromoboxSlide\CollectionFactory;
 
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {

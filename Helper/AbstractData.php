@@ -18,13 +18,9 @@ class AbstractData extends AbstractHelper
     const CONFIG_MODULE_PATH = 'promobox';
 
     protected $_data = [];
-
     protected $storeManager;
-
     protected $objectManager;
-
     protected $backendConfig;
-
     protected $isArea = [];
 
     public function __construct(
@@ -105,7 +101,7 @@ class AbstractData extends AbstractHelper
 
     public function serialize($data)
     {
-        if ($this->versionCompare('2.2.0')) {
+        if ($this->versionCompare('1.0.0')) {
             return self::jsonEncode($data);
         }
 
@@ -114,7 +110,7 @@ class AbstractData extends AbstractHelper
 
     public function unserialize($string)
     {
-        if ($this->versionCompare('2.2.0')) {
+        if ($this->versionCompare('1.0.0')) {
             return self::jsonDecode($string);
         }
 

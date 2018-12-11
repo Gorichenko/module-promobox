@@ -5,6 +5,7 @@ namespace VOID\Promobox\Setup;
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
+use Magento\Framework\DB\Ddl\Table;
 
 class InstallSchema implements InstallSchemaInterface
 {
@@ -20,7 +21,7 @@ class InstallSchema implements InstallSchemaInterface
         }
 
         $table = $installer->getConnection()->newTable($setup->getTable('promobox_slides'))
-            ->addColumn('slide_id', Table::TYPE_INTEGER, null, [
+            ->addColumn('slide_id', Table::TYPE_SMALLINT, null, [
                 'identity' => true,
                 'unsigned' => true,
                 'nullable' => false,
@@ -38,7 +39,7 @@ class InstallSchema implements InstallSchemaInterface
         }
 
         $table = $installer->getConnection()->newTable($setup->getTable('promobox_widgets'))
-            ->addColumn('widget_id', Table::TYPE_INTEGER, null, [
+            ->addColumn('widget_id', Table::TYPE_SMALLINT, null, [
                 'identity' => true,
                 'unsigned' => true,
                 'nullable' => false,
@@ -51,32 +52,32 @@ class InstallSchema implements InstallSchemaInterface
 
         $connection->createTable($table);
 
-        if ($installer->tableExists('promobox_slide_widget')) {
-            $connection->dropTable($setup->getTable('promobox_slide_widget'));
+        if ($installer->tableExists('promobox_widget_slide')) {
+            $connection->dropTable($setup->getTable('promobox_widget_slide'));
         }
 
-        $table = $installer->getConnection()->newTable($setup->getTable('promobox_slide_widget'))
-            ->addColumn('id', Table::TYPE_INTEGER, null, [
+        $table = $installer->getConnection()->newTable($setup->getTable('promobox_widget_slide'))
+            ->addColumn('id', Table::TYPE_SMALLINT, null, [
                 'identity' => true,
                 'unsigned' => true,
                 'nullable' => false,
                 'primary' => true
             ], 'Id')
-            ->addColumn('widget_id', Table::TYPE_INTEGER, 11, [], 'Widget Id')
-            ->addColumn('slide_id', Table::TYPE_INTEGER, 11, [], 'Slide Id')
+            ->addColumn('widget_id', Table::TYPE_SMALLINT, null, ['unsigned' => true], 'Widget Id')
+            ->addColumn('slide_id', Table::TYPE_SMALLINT, null, ['unsigned' => true], 'Slide Id')
             ->addForeignKey(
-                $installer->getFkName('promobox_slides', 'slide_id', 'promobox_slide_widget', 'slide_id'),
+                $installer->getFkName('promobox_widget_slide', 'slide_id', 'promobox_slides', 'slide_id'),
                 'slide_id',
-                $installer->getTable('promobox_slide_widget'),
+                $installer->getTable('promobox_slides'),
                 'slide_id',
-                \Magento\Framework\DB\Ddl\Table::ACTION_RESTRICT
+                Table::ACTION_NO_ACTION
             )
             ->addForeignKey(
-                $installer->getFkName('promobox_widgets', 'widget_id', 'promobox_slide_widget', 'widget_id'),
-                'slide_id',
-                $installer->getTable('promobox_slide_widget'),
+                $installer->getFkName('promobox_widget_slide', 'widget_id', 'promobox_widgets', 'widget_id'),
                 'widget_id',
-                \Magento\Framework\DB\Ddl\Table::ACTION_CASCADE
+                $installer->getTable('promobox_widgets'),
+                'widget_id',
+                Table::ACTION_CASCADE
             )
             ->setComment('Slides_Widgets');
 

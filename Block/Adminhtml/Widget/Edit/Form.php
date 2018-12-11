@@ -23,7 +23,7 @@ class Form extends Generic
 
     protected function _prepareForm()
     {
-        $slide = $this->_coreRegistry->registry('void_productslider_widget');
+        $slide = $this->_coreRegistry->registry('void_promobox_widget');
         $slideCollection = $this->slideCollection->addFieldToSelect(['slide_id', 'slide_title'])->getData();
 
         $form = $this->_formFactory->create(

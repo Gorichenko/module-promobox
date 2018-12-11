@@ -32,7 +32,6 @@ class Promobox extends Template implements BlockInterface
     public function _construct()
     {
         parent::_construct();
-
         $this->setTemplate('VOID_Promobox::widget/promobox.phtml');
     }
 
@@ -87,6 +86,6 @@ class Promobox extends Template implements BlockInterface
 
     public function getArticleUrl($slideId)
     {
-        return $this->getUrl("promobox/article/article/", ['_query' => ['articleId' => $slideId]]);
+        return $this->getUrl("promo/article/article/", ['_query' => ['articleId' => $slideId]]);
     }
 }

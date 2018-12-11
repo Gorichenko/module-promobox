@@ -7,8 +7,8 @@ class OnSaleProduct extends AbstractSlider
     public function getProductCollection()
     {
         $visibleProducts = $this->catalogProductVisibility->getVisibleInCatalogIds();
-        $collection      = $this->productCollectionFactory->create()->setVisibility($visibleProducts);
-        $collection      = $this->_addProductAttributesAndPrices($collection)
+        $collection = $this->productCollectionFactory->create()->setVisibility($visibleProducts);
+        $collection = $this->_addProductAttributesAndPrices($collection)
             ->addAttributeToFilter(
                 'special_from_date',
                 ['date' => true, 'to' => $this->getEndOfDayDate()], 'left'

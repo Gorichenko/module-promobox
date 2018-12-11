@@ -7,13 +7,8 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 class Collection extends AbstractCollection
 {
     protected $_idFieldName = 'widget_id';
-
-
     protected $_eventPrefix = 'promobox_widget_collection';
-
-
     protected $_eventObject = 'promobox_widget_collection';
-
 
     protected function _construct()
     {

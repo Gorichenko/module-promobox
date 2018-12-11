@@ -9,7 +9,6 @@ class PromoboxWidgetSlide extends AbstractModel
     const CACHE_TAG = 'promobox_widget_slide';
 
     protected $_cacheTag = 'promobox_widget_slide';
-
     protected $_eventPrefix = 'promobox_widget_slide';
 
     protected function _construct()

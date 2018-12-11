@@ -13,7 +13,6 @@ class Data extends AbstractData
     const CONFIG_MODULE_PATH = 'productslider';
 
     protected $date;
-
     protected $httpContext;
 
     public function __construct(
@@ -29,23 +28,6 @@ class Data extends AbstractData
 
         parent::__construct($context, $objectManager, $storeManager);
     }
-
-//    public function getActiveSliders()
-//    {
-//        /** @var Collection $collection */
-//        $collection = $this->sliderFactory->create()
-//            ->getCollection()
-//            ->addFieldToFilter('customer_group_ids', ['finset' => $this->httpContext->getValue(\Magento\Customer\Model\Context::CONTEXT_GROUP)])
-//            ->addFieldToFilter('status', 1);
-//
-//        $collection->getSelect()
-//            ->where('FIND_IN_SET(0, store_ids) OR FIND_IN_SET(?, store_ids)', $this->storeManager->getStore()->getId())
-//            ->where('from_date is null OR from_date <= ?', $this->date->date())
-//            ->where('to_date is null OR to_date >= ?', $this->date->date());
-//
-//        return $collection;
-//    }
-
 
     public function getProductSliderOptions()
     {

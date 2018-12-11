@@ -4,5 +4,8 @@
         <route id="productslider" frontName="productslider">
             <module name="VOID_Promobox"/>
         </route>
+        <route id="promo" frontName="promo">
+            <module name="VOID_Promobox"/>
+        </route>
     </router>
 </config>

@@ -1,6 +1,6 @@
 <?php
 
-namespace VOID\Promobox\Block\Adminhtml\Widget;
+namespace VOID\Promobox\Block\Adminhtml\Slider;
 
 use Magento\Backend\Block\Widget\Context;
 use Magento\Backend\Block\Widget\Form\Container;
@@ -24,24 +24,23 @@ class Edit extends Container
     public function getHeaderText()
     {
         $slider = $this->getSlider();
-
         if ($slider->getId()) {
-            return __("Edit Widget '%1'", $this->escapeHtml($slider->getName()));
+            return __("Edit Slider '%1'", $this->escapeHtml($slider->getName()));
         }
 
-        return __('New Widget');
+        return __('New Slide');
     }
 
     public function getSlider()
     {
-        return $this->coreRegistry->registry('void_promobox_widget');
+        return $this->coreRegistry->registry('void_promobox_slider');
     }
 
     protected function _construct()
     {
-        $this->_objectId   = 'widget_id';
+        $this->_objectId   = 'slide_id';
         $this->_blockGroup = 'VOID_Promobox';
-        $this->_controller = 'adminhtml_widget';
+        $this->_controller = 'adminhtml_slider';
 
         parent::_construct();
     }

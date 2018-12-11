@@ -12,7 +12,6 @@ abstract class Widget extends Action
     const ADMIN_RESOURCE = 'VOID_Promobox::widget';
 
     protected $widgetModel;
-
     protected $coreRegistry;
 
     public function __construct(

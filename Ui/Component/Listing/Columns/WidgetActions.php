@@ -9,7 +9,7 @@ use Magento\Ui\Component\Listing\Columns\Column;
 
 class WidgetActions extends Column
 {
-    protected $_urlBuilder;
+    protected $urlBuilder;
 
     public function __construct(
         UrlInterface $urlBuilder,
@@ -19,7 +19,7 @@ class WidgetActions extends Column
         array $data = []
     )
     {
-        $this->_urlBuilder = $urlBuilder;
+        $this->urlBuilder = $urlBuilder;
 
         parent::__construct($context, $uiComponentFactory, $components, $data);
     }
@@ -32,11 +32,11 @@ class WidgetActions extends Column
                 if (isset($item['widget_id'])) {
                     $item[$this->getData('name')] = [
                         'edit' => [
-                            'href'  => $this->_urlBuilder->getUrl('promobox/widget/edit', ['id' => $item['widget_id']]),
+                            'href'  => $this->urlBuilder->getUrl('promobox/widget/edit', ['id' => $item['widget_id']]),
                             'label' => __('Edit')
                         ],
                         'delete' => [
-                            'href'  => $this->_urlBuilder->getUrl('promobox/widget/delete', ['id' => $item['widget_id']]),
+                            'href'  => $this->urlBuilder->getUrl('promobox/widget/delete', ['id' => $item['widget_id']]),
                             'label' => __('Delete'),
                             'confirm' => [
                                 'title' => __('Delete "${ $.$data.widget_title }"'),

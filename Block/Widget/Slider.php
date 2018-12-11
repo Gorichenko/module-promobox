@@ -45,7 +45,6 @@ class Slider extends AbstractSlider implements BlockInterface
     public function _construct()
     {
         parent::_construct();
-
         $this->setTemplate('VOID_Promobox::widget/productslider.phtml');
     }
 
@@ -85,7 +84,7 @@ class Slider extends AbstractSlider implements BlockInterface
 
     public function getDisplayAdditional()
     {
-        $display = $this->_helperData->getModuleConfig('general/display_information');
+        $display = $this->helperData->getModuleConfig('general/display_information');
         if (!is_array($display)) {
             $display = explode(',', $display);
         }
@@ -94,7 +93,7 @@ class Slider extends AbstractSlider implements BlockInterface
 
     public function getHelperData()
     {
-        return $this->_helperData;
+        return $this->helperData;
     }
 
     public function getDisplayType()
@@ -127,11 +126,11 @@ class Slider extends AbstractSlider implements BlockInterface
 
     public function getProductSliderOptions()
     {
-        return $this->_helperData->getProductSliderOptions();
+        return $this->helperData->getProductSliderOptions();
     }
 
     public function getUniqueId()
     {
-        return $this->_helperData->randomString();
+        return $this->helperData->randomString();
     }
 }

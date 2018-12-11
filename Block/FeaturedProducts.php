@@ -6,9 +6,9 @@ class FeaturedProducts extends AbstractSlider
 {
     public function getProductCollection()
     {
-        $visibleProducts = $this->_catalogProductVisibility->getVisibleInCatalogIds();
+        $visibleProducts = $this->catalogProductVisibility->getVisibleInCatalogIds();
 
-        $collection = $this->_productCollectionFactory->create()->setVisibility($visibleProducts);
+        $collection = $this->productCollectionFactory->create()->setVisibility($visibleProducts);
         $collection->addMinimalPrice()
             ->addFinalPrice()
             ->addTaxPercents()
